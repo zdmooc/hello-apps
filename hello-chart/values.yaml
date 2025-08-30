@@ -8,3 +8,6 @@ resources:
   limits:   { cpu: 300m, memory: 256Mi }
 route:
   host: hello-odm-tdv1.apps-crc.testing
+service:
+  name: http
+  port: 8080

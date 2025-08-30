@@ -3,12 +3,13 @@ kind: Route
 metadata:
   name: hello
 spec:
-  {{- if .Values.route.host }}
-  host: {{ .Values.route.host | quote }}
-  {{- end }}
+  host: {{ .Values.route.host }}
   to:
     kind: Service
     name: hello
   port:
     targetPort: {{ .Values.service.name }}
+  tls:
+    termination: edge
+
 
